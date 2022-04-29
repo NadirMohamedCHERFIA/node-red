@@ -1,1 +1,441 @@
-[]
+[
+    {
+        "id": "4141d79aadc60e03",
+        "type": "tab",
+        "label": "Air Quality",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "52a25a06bc95291d",
+        "type": "tab",
+        "label": "Particulates ",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "564c1cf6652e3d13",
+        "type": "tab",
+        "label": "Weather",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "7d9f66928278cbf6",
+        "type": "tab",
+        "label": "Pollutants",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "e3302d7b55482cba",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "localhost",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "a923ab0cdd8f9544",
+        "type": "ui_tab",
+        "name": "Weather",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "e3c48110da354e2c",
+        "type": "ui_group",
+        "name": "Particulates Matter",
+        "tab": "fc60932aecfe256a",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "c45498108e07daf2",
+        "type": "ui_group",
+        "name": "Weather",
+        "tab": "a923ab0cdd8f9544",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "fc60932aecfe256a",
+        "type": "ui_tab",
+        "name": "Particulates",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "4be68c93cd1201f6",
+        "type": "ui_tab",
+        "name": "Air_quality",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "6e35c65e8233cb8f",
+        "type": "ui_group",
+        "name": "Air Quality",
+        "tab": "4be68c93cd1201f6",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "47ff3bd86da6aecc",
+        "type": "ui_tab",
+        "name": "Pollutants",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "428bd1e252a8757c",
+        "type": "ui_group",
+        "name": "Pollutants",
+        "tab": "47ff3bd86da6aecc",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "4b55b836e2e8f82c",
+        "type": "mqtt in",
+        "z": "4141d79aadc60e03",
+        "name": "",
+        "topic": "esp/MQ135/temperature",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "e3302d7b55482cba",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 190,
+        "y": 140,
+        "wires": [
+            [
+                "bb652a89d00d2803"
+            ]
+        ]
+    },
+    {
+        "id": "bb652a89d00d2803",
+        "type": "ui_artlessgauge",
+        "z": "4141d79aadc60e03",
+        "group": "6e35c65e8233cb8f",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "icon": "fa-fire",
+        "label": "Temperature",
+        "unit": "C",
+        "layout": "radial",
+        "decimals": 0,
+        "differential": false,
+        "minmax": true,
+        "colorTrack": "#555555",
+        "style": "",
+        "colorFromTheme": true,
+        "property": "payload",
+        "secondary": "secondary",
+        "inline": false,
+        "animate": true,
+        "sectors": [
+            {
+                "val": 0,
+                "col": "#73d216",
+                "t": "min",
+                "dot": 0
+            },
+            {
+                "val": 10,
+                "col": "#73d216",
+                "t": "max",
+                "dot": 0
+            }
+        ],
+        "lineWidth": "7",
+        "bgcolorFromTheme": true,
+        "diffCenter": "",
+        "x": 540,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "247dc2a62ae6d4ca",
+        "type": "ui_artlessgauge",
+        "z": "52a25a06bc95291d",
+        "group": "e3c48110da354e2c",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "icon": "",
+        "label": "PM10",
+        "unit": "",
+        "layout": "radial",
+        "decimals": 0,
+        "differential": false,
+        "minmax": false,
+        "colorTrack": "#555555",
+        "style": "",
+        "colorFromTheme": true,
+        "property": "payload",
+        "secondary": "secondary",
+        "inline": false,
+        "animate": true,
+        "sectors": [
+            {
+                "val": 0,
+                "col": "#ff9900",
+                "t": "min",
+                "dot": 0
+            },
+            {
+                "val": 10,
+                "col": "#ff9900",
+                "t": "max",
+                "dot": 0
+            }
+        ],
+        "lineWidth": 3,
+        "bgcolorFromTheme": true,
+        "diffCenter": "",
+        "x": 380,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "42bf1bb13bca4e65",
+        "type": "mqtt in",
+        "z": "52a25a06bc95291d",
+        "name": "",
+        "topic": "esp/PMA003i/PM10",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "e3302d7b55482cba",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 150,
+        "y": 160,
+        "wires": [
+            [
+                "247dc2a62ae6d4ca"
+            ]
+        ]
+    },
+    {
+        "id": "35e42dde749df9ce",
+        "type": "mqtt in",
+        "z": "564c1cf6652e3d13",
+        "name": "",
+        "topic": "esp/BME680/temperature",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "e3302d7b55482cba",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 230,
+        "y": 200,
+        "wires": [
+            [
+                "0a5aeb236a37da65",
+                "2086265ebd155924"
+            ]
+        ]
+    },
+    {
+        "id": "0a5aeb236a37da65",
+        "type": "ui_artlessgauge",
+        "z": "564c1cf6652e3d13",
+        "group": "c45498108e07daf2",
+        "order": 1,
+        "width": "3",
+        "height": "3",
+        "name": "",
+        "icon": "",
+        "label": "Tempertaure",
+        "unit": "",
+        "layout": "radial",
+        "decimals": 0,
+        "differential": false,
+        "minmax": false,
+        "colorTrack": "#555555",
+        "style": "",
+        "colorFromTheme": true,
+        "property": "payload",
+        "secondary": "secondary",
+        "inline": false,
+        "animate": true,
+        "sectors": [
+            {
+                "val": 0,
+                "col": "#ff9900",
+                "t": "min",
+                "dot": 0
+            },
+            {
+                "val": 10,
+                "col": "#ff9900",
+                "t": "max",
+                "dot": 0
+            }
+        ],
+        "lineWidth": 3,
+        "bgcolorFromTheme": true,
+        "diffCenter": "",
+        "x": 540,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "2086265ebd155924",
+        "type": "ui_chart",
+        "z": "564c1cf6652e3d13",
+        "name": "",
+        "group": "c45498108e07daf2",
+        "order": 1,
+        "width": "6",
+        "height": "4",
+        "label": "Temperature chart",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 750,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1e77c686ab3bf84e",
+        "type": "ui_artlessgauge",
+        "z": "7d9f66928278cbf6",
+        "group": "428bd1e252a8757c",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "icon": "",
+        "label": "CO2",
+        "unit": "ppm",
+        "layout": "radial",
+        "decimals": 0,
+        "differential": false,
+        "minmax": false,
+        "colorTrack": "#555555",
+        "style": "",
+        "colorFromTheme": true,
+        "property": "payload",
+        "secondary": "secondary",
+        "inline": false,
+        "animate": true,
+        "sectors": [
+            {
+                "val": 0,
+                "col": "#cc0000",
+                "t": "min",
+                "dot": 0
+            },
+            {
+                "val": 10,
+                "col": "#cc0000",
+                "t": "max",
+                "dot": 0
+            }
+        ],
+        "lineWidth": 3,
+        "bgcolorFromTheme": true,
+        "diffCenter": "",
+        "x": 420,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "e49086a7d9ec190f",
+        "type": "mqtt in",
+        "z": "7d9f66928278cbf6",
+        "name": "",
+        "topic": "esp/CCS811/CO2",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "e3302d7b55482cba",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 110,
+        "y": 240,
+        "wires": [
+            [
+                "1e77c686ab3bf84e"
+            ]
+        ]
+    }
+]
